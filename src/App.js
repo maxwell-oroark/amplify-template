@@ -2,7 +2,6 @@ import { useEffect } from "react";
 
 import Amplify from "@aws-amplify/core";
 import awsmobile from "./aws-exports";
-import logo from "./logo.svg";
 import "./App.css";
 import { Auth } from "aws-amplify";
 import { atom, useAtom } from "jotai";
@@ -25,7 +24,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img
+          src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+          className="App-logo h-20 w-20"
+          alt="logo"
+        />
 
         {!user ? (
           <div>
