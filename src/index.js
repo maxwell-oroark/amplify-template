@@ -1,13 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Amplify from "@aws-amplify/core";
+import awsmobile from "./aws-exports";
+import { Authenticator } from "@aws-amplify/ui-react";
+
+import "./index.css";
+import "@aws-amplify/ui-react/styles.css";
+
+Amplify.configure(awsmobile);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Authenticator variation="modal" hideSignUp={true}>
+      {({ user, signOut }) => <App user={user} signOut={signOut} />}
+    </Authenticator>
   </React.StrictMode>
 );
 
