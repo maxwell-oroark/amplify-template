@@ -3,8 +3,6 @@ import { Route } from "wouter";
 import Nav from "./Nav";
 import Projects from "./Projects";
 
-import "./App.css";
-
 function App({ user, signOut }) {
   return (
     <div className="App">

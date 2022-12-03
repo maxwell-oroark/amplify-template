@@ -1,13 +1,23 @@
+import { Link } from "wouter";
 import { Button } from "antd";
 
-export default function Projects({ user, signOut }) {
-  console.log(user);
+const projects = ["project-123", "project-456", "project-789"];
+
+export default function Projects() {
   return (
-    <header className="App-header">
-      {user && <div>Logged in as {user.attributes.email}</div>}
-      <Button type="link" onClick={signOut}>
-        Log out
-      </Button>
-    </header>
+    <main className="p-10">
+      <h1>dGH Projects</h1>
+      <div className="flex flex-col">
+        {projects.map((project) => {
+          return (
+            <div>
+              <Link to={`/projects/${project}`}>
+                <Button type="link"> {project}</Button>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </main>
   );
 }
