@@ -1,16 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import Amplify from "@aws-amplify/core";
 import awsmobile from "./aws-exports";
 import "./App.css";
 import { Auth } from "aws-amplify";
-import { atom, useAtom } from "jotai";
-const userAtom = atom(null);
 
 Amplify.configure(awsmobile);
 
 function App() {
-  const [user, setUser] = useAtom(userAtom);
+  const [user, setUser] = useState(null);
   useEffect(() => {
     const fetchUser = async () => {
       const user = await Auth.currentUserInfo();
