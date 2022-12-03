@@ -1,7 +1,6 @@
 import { useLocation, Link } from "wouter";
-
-import { HomeOutlined, UserOutlined } from "@ant-design/icons";
 import { Breadcrumb, Avatar, Popover, Button } from "antd";
+import { HomeOutlined, UserOutlined } from "@ant-design/icons";
 
 export default function Nav({ user, signOut }) {
   const [location] = useLocation();
@@ -11,24 +10,24 @@ export default function Nav({ user, signOut }) {
     <header className="sticky top-0 left-0 right-0 flex px-10 py-5 justify-between">
       <Breadcrumb>
         {projects && (
-          <Breadcrumb.Item href="">
+          <Breadcrumb.Item>
             <HomeOutlined />
           </Breadcrumb.Item>
         )}
         {projectId && (
           <>
-            <Breadcrumb.Item href="">
+            <Breadcrumb.Item>
               <Link to="/projects">projects</Link>
             </Breadcrumb.Item>
-            <Breadcrumb.Item href="">
+            <Breadcrumb.Item>
               <Link to={`/projects/${projectId}`}>{projectId}</Link>
             </Breadcrumb.Item>
           </>
         )}
         {cellId && (
           <>
-            <Breadcrumb.Item href="">cells</Breadcrumb.Item>
-            <Breadcrumb.Item href="">{cellId}</Breadcrumb.Item>
+            <Breadcrumb.Item>cells</Breadcrumb.Item>
+            <Breadcrumb.Item>{cellId}</Breadcrumb.Item>
           </>
         )}
       </Breadcrumb>
