@@ -1,10 +1,10 @@
 import { useLocation, Link } from "wouter";
 import { Breadcrumb, Avatar, Popover, Button } from "antd";
-import { HomeOutlined, UserOutlined } from "@ant-design/icons";
+import { UserOutlined } from "@ant-design/icons";
 
 export default function Nav({ user, signOut }) {
   const [location] = useLocation();
-  const [, projects, projectId, , cellId] = location.split("/");
+  const [, , projectId, , cellId] = location.split("/");
 
   return (
     <header className="sticky top-0 left-0 right-0 flex px-10 py-5 justify-between">
@@ -44,8 +44,13 @@ export default function Nav({ user, signOut }) {
           placement="topRight"
           content={
             <>
-              <p>{`signed in as ${user.attributes.email}`}</p>
-              <Button onClick={signOut}>sign out</Button>
+              <p className="mb-2">
+                signed in as{" "}
+                <span className="font-semibold">{user.attributes.email}</span>
+              </p>
+              <Button block onClick={signOut}>
+                sign out
+              </Button>
             </>
           }
         >
