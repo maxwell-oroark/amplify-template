@@ -7,7 +7,7 @@ export default function Nav({ user, signOut }) {
   const [, , projectId, , cellId] = location.split("/");
 
   return (
-    <header className="sticky top-0 left-0 right-0 flex px-10 py-5 justify-between">
+    <header className="sticky top-0 left-0 right-0 flex px-10 py-5 justify-between border border-b-1">
       <Breadcrumb>
         <Breadcrumb.Item>
           <Link className="text-xl" to="/projects">
