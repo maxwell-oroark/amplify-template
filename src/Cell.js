@@ -21,7 +21,47 @@ export default function Cell({ projectId, id }) {
           Spread
         </Tabs.TabPane>
         <Tabs.TabPane tab="Loci" key="item-3">
-          Loci
+          <Tabs>
+            <Tabs.TabPane tab="Loci A" key="loci-1">
+              <Tabs>
+                <Tabs.TabPane tab="Homolog 1" key="homolog-1">
+                  Homolog 1
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Homolog 2" key="homolog-2">
+                  Homolog 1
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Other" key="homolog-3">
+                  Other
+                </Tabs.TabPane>
+              </Tabs>
+            </Tabs.TabPane>
+            <Tabs.TabPane tab="Loci B" key="loci-2">
+              <Tabs>
+                <Tabs.TabPane tab="Homolog 1" key="homolog-1">
+                  Homolog 1
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Homolog 2" key="homolog-2">
+                  Homolog 2
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Other" key="homolog-3">
+                  Other
+                </Tabs.TabPane>
+              </Tabs>
+            </Tabs.TabPane>
+            <Tabs.TabPane tab="Loci C" key="loci-3">
+              <Tabs>
+                <Tabs.TabPane tab="Homolog 1" key="homolog-1">
+                  Homolog 1
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Homolog 2" key="homolog-2">
+                  Homolog 2
+                </Tabs.TabPane>
+                <Tabs.TabPane tab="Other" key="homolog-3">
+                  Other
+                </Tabs.TabPane>
+              </Tabs>
+            </Tabs.TabPane>
+          </Tabs>
         </Tabs.TabPane>
       </Tabs>
     </main>
