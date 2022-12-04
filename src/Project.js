@@ -1,5 +1,5 @@
 import { cells } from "./mocks/cells";
-import { Table } from "antd";
+import { Table, Tag } from "antd";
 import { Link } from "wouter";
 
 export default function Project({ id }) {
@@ -33,6 +33,16 @@ export default function Project({ id }) {
           {
             dataIndex: "reviewed",
             title: "Reviewed",
+            render: (text, record) => {
+              return (
+                <Tag
+                  className="self-center"
+                  color={record.reviewed ? "blue" : "red"}
+                >
+                  {record.reviewed ? "reviewed" : "not reviewed"}
+                </Tag>
+              );
+            },
           },
           {
             dataIndex: "loss",
