@@ -4,7 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Amplify from "@aws-amplify/core";
 import awsmobile from "./aws-exports";
-import { Authenticator } from "@aws-amplify/ui-react";
+import { Authenticator, useTheme, View } from "@aws-amplify/ui-react";
 
 import "./index.css";
 import "@aws-amplify/ui-react/styles.css";
@@ -14,7 +14,26 @@ Amplify.configure(awsmobile);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Authenticator variation="modal" hideSignUp={true}>
+    <Authenticator
+      variation="modal"
+      hideSignUp={true}
+      components={{
+        Header() {
+          const { tokens } = useTheme();
+          console.log(tokens);
+          return (
+            <View
+              backgroundColor={tokens.colors.teal[80]}
+              textAlign="center"
+              padding={tokens.space.medium}
+            >
+              <h1 className="text-white text-2xl">Kroma TiD</h1>
+              <h2 className="text-white text-xl">dGH Scoring Application</h2>
+            </View>
+          );
+        },
+      }}
+    >
       {({ user, signOut }) => <App user={user} signOut={signOut} />}
     </Authenticator>
   </React.StrictMode>
