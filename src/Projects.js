@@ -10,7 +10,7 @@ export default function Projects() {
       <div className="flex flex-col">
         {projects.map((project) => {
           return (
-            <div>
+            <div key={project}>
               <Link to={`/projects/${project}`}>
                 <Button type="link"> {project}</Button>
               </Link>
