@@ -9,25 +9,33 @@ export default function Nav({ user, signOut }) {
   return (
     <header className="sticky top-0 left-0 right-0 flex px-10 py-5 justify-between">
       <Breadcrumb>
-        {projects && (
-          <Breadcrumb.Item>
-            <HomeOutlined />
-          </Breadcrumb.Item>
-        )}
+        <Breadcrumb.Item>
+          <Link className="text-xl" to="/projects">
+            home
+          </Link>
+        </Breadcrumb.Item>
         {projectId && (
           <>
             <Breadcrumb.Item>
-              <Link to="/projects">projects</Link>
+              <Link className="text-xl" to="/projects">
+                projects
+              </Link>
             </Breadcrumb.Item>
             <Breadcrumb.Item>
-              <Link to={`/projects/${projectId}`}>{projectId}</Link>
+              <Link className="text-xl" to={`/projects/${projectId}`}>
+                {projectId}
+              </Link>
             </Breadcrumb.Item>
           </>
         )}
         {cellId && (
           <>
-            <Breadcrumb.Item>cells</Breadcrumb.Item>
-            <Breadcrumb.Item>{cellId}</Breadcrumb.Item>
+            <Breadcrumb.Item>
+              <span className="text-xl">cells</span>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>
+              <span className="text-xl">{cellId}</span>
+            </Breadcrumb.Item>
           </>
         )}
       </Breadcrumb>
