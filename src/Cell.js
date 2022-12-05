@@ -1,5 +1,5 @@
 import { cells } from "./mocks/cells";
-import CellThumbnailSrc from "./mocks/cell_thumbnail.jpeg";
+import CellThumbnailSrc from "./mocks/cell_thumbnail.jpg";
 import { Tabs, Tag } from "antd";
 
 export default function Cell({ projectId, id }) {

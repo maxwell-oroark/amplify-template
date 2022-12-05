@@ -20,7 +20,6 @@ root.render(
       components={{
         Header() {
           const { tokens } = useTheme();
-          console.log(tokens);
           return (
             <View
               backgroundColor={tokens.colors.teal[80]}
