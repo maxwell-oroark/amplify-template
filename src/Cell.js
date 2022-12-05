@@ -1,4 +1,5 @@
 import { cells } from "./mocks/cells";
+import CellThumbnailSrc from "./mocks/cell_thumbnail.jpeg";
 import { Tabs, Tag } from "antd";
 
 export default function Cell({ projectId, id }) {
@@ -13,57 +14,68 @@ export default function Cell({ projectId, id }) {
           {cell.reviewed ? "reviewed" : "not reviewed"}
         </Tag>
       </div>
-      <Tabs>
-        <Tabs.TabPane tab="Summary" key="item-1">
-          Summary
-        </Tabs.TabPane>
-        <Tabs.TabPane tab="Spread" key="item-2">
-          Spread
-        </Tabs.TabPane>
-        <Tabs.TabPane tab="Loci" key="item-3">
-          <Tabs>
-            <Tabs.TabPane tab="Loci A" key="loci-1">
-              <Tabs>
-                <Tabs.TabPane tab="Homolog 1" key="homolog-1">
-                  Homolog 1
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Homolog 2" key="homolog-2">
-                  Homolog 1
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Other" key="homolog-3">
-                  Other
-                </Tabs.TabPane>
-              </Tabs>
-            </Tabs.TabPane>
-            <Tabs.TabPane tab="Loci B" key="loci-2">
-              <Tabs>
-                <Tabs.TabPane tab="Homolog 1" key="homolog-1">
-                  Homolog 1
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Homolog 2" key="homolog-2">
-                  Homolog 2
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Other" key="homolog-3">
-                  Other
-                </Tabs.TabPane>
-              </Tabs>
-            </Tabs.TabPane>
-            <Tabs.TabPane tab="Loci C" key="loci-3">
-              <Tabs>
-                <Tabs.TabPane tab="Homolog 1" key="homolog-1">
-                  Homolog 1
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Homolog 2" key="homolog-2">
-                  Homolog 2
-                </Tabs.TabPane>
-                <Tabs.TabPane tab="Other" key="homolog-3">
-                  Other
-                </Tabs.TabPane>
-              </Tabs>
-            </Tabs.TabPane>
-          </Tabs>
-        </Tabs.TabPane>
-      </Tabs>
+      <div className="flex">
+        <Tabs>
+          <Tabs.TabPane tab="Summary" key="summary">
+            Summary
+          </Tabs.TabPane>
+          <Tabs.TabPane tab="Spread" key="spread">
+            Spread
+          </Tabs.TabPane>
+          <Tabs.TabPane tab="Loci" key="loci">
+            <Tabs>
+              <Tabs.TabPane tab="Loci A" key="loci-a">
+                <Tabs>
+                  <Tabs.TabPane tab="Homolog 1" key="homolog-1">
+                    Homolog 1
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Homolog 2" key="homolog-2">
+                    Homolog 2
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Other" key="homolog-3">
+                    Other
+                  </Tabs.TabPane>
+                </Tabs>
+              </Tabs.TabPane>
+              <Tabs.TabPane tab="Loci B" key="loci-b">
+                <Tabs>
+                  <Tabs.TabPane tab="Homolog 1" key="homolog-1">
+                    Homolog 1
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Homolog 2" key="homolog-2">
+                    Homolog 2
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Other" key="homolog-3">
+                    Other
+                  </Tabs.TabPane>
+                </Tabs>
+              </Tabs.TabPane>
+              <Tabs.TabPane tab="Loci C" key="loci-c">
+                <Tabs>
+                  <Tabs.TabPane tab="Homolog 1" key="homolog-1">
+                    Homolog 1
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Homolog 2" key="homolog-2">
+                    Homolog 2
+                  </Tabs.TabPane>
+                  <Tabs.TabPane tab="Other" key="homolog-3">
+                    Other
+                  </Tabs.TabPane>
+                </Tabs>
+              </Tabs.TabPane>
+            </Tabs>
+          </Tabs.TabPane>
+        </Tabs>
+        <div className="flex-grow">
+          <div>
+            <img
+              alt="preview of cell"
+              className="ml-auto w-96"
+              src={CellThumbnailSrc}
+            />
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
