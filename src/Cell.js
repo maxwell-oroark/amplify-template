@@ -1,6 +1,9 @@
 import { cells } from "./mocks/cells";
 import CellThumbnailSrc from "./mocks/cell_thumbnail.jpg";
 import { Tabs, Tag } from "antd";
+import HomologEntry from "./HomologEntry";
+import HomologOtherEntry from "./HomologOtherEntry";
+import SpreadEntry from "./SpreadEntry";
 
 export default function Cell({ id }) {
   const cell = cells.find((c) => c.id === id);
@@ -12,7 +15,7 @@ export default function Cell({ id }) {
         </h1>
         <Tag
           className={`self-center ${
-            cell.reviewd ? "bg-blue-400" : "bg-red-400"
+            cell.reviewed ? "bg-blue-400" : "bg-red-400"
           }`}
         >
           {cell.reviewed ? "reviewed" : "not reviewed"}
@@ -21,49 +24,49 @@ export default function Cell({ id }) {
       <div className="flex">
         <Tabs>
           <Tabs.TabPane tab="Summary" key="summary">
-            Summary
+            {cell.notes}
           </Tabs.TabPane>
           <Tabs.TabPane tab="Spread" key="spread">
-            Spread
+            <SpreadEntry />
           </Tabs.TabPane>
           <Tabs.TabPane tab="Loci" key="loci">
             <Tabs>
               <Tabs.TabPane tab="Loci A" key="loci-a">
                 <Tabs>
                   <Tabs.TabPane tab="Homolog 1" key="homolog-1">
-                    Homolog 1
+                    <HomologEntry />
                   </Tabs.TabPane>
                   <Tabs.TabPane tab="Homolog 2" key="homolog-2">
-                    Homolog 2
+                    <HomologEntry />
                   </Tabs.TabPane>
                   <Tabs.TabPane tab="Other" key="homolog-3">
-                    Other
+                    <HomologOtherEntry />
                   </Tabs.TabPane>
                 </Tabs>
               </Tabs.TabPane>
               <Tabs.TabPane tab="Loci B" key="loci-b">
                 <Tabs>
                   <Tabs.TabPane tab="Homolog 1" key="homolog-1">
-                    Homolog 1
+                    <HomologEntry />
                   </Tabs.TabPane>
                   <Tabs.TabPane tab="Homolog 2" key="homolog-2">
-                    Homolog 2
+                    <HomologEntry />
                   </Tabs.TabPane>
                   <Tabs.TabPane tab="Other" key="homolog-3">
-                    Other
+                    <HomologOtherEntry />
                   </Tabs.TabPane>
                 </Tabs>
               </Tabs.TabPane>
               <Tabs.TabPane tab="Loci C" key="loci-c">
                 <Tabs>
                   <Tabs.TabPane tab="Homolog 1" key="homolog-1">
-                    Homolog 1
+                    <HomologEntry />
                   </Tabs.TabPane>
                   <Tabs.TabPane tab="Homolog 2" key="homolog-2">
-                    Homolog 2
+                    <HomologEntry />
                   </Tabs.TabPane>
                   <Tabs.TabPane tab="Other" key="homolog-3">
-                    Other
+                    <HomologOtherEntry />
                   </Tabs.TabPane>
                 </Tabs>
               </Tabs.TabPane>

@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import { Link } from "wouter";
 
-const samples = ["sample-123", "sample-345", "sample-456"];
+const samples = ["samples-123", "samples-345", "samples-456"];
 
 export default function Project({ id }) {
   return (

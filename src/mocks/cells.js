@@ -8,6 +8,7 @@ export const cells = [
     ssc: 0,
     insertion: 8,
     size_diff: 3,
+    notes: "some notes about the cell 1",
   },
   {
     id: "2",
@@ -18,6 +19,7 @@ export const cells = [
     ssc: 2,
     insertion: 2,
     size_diff: 3,
+    notes: "some notes about the cell 2",
   },
   {
     id: "3",
@@ -28,5 +30,6 @@ export const cells = [
     ssc: 0,
     insertion: 3,
     size_diff: 5,
+    notes: "some notes about the cell 3",
   },
 ];
