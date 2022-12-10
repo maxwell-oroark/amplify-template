@@ -2,7 +2,7 @@ import { cells } from "./mocks/cells";
 import CellThumbnailSrc from "./mocks/cell_thumbnail.jpeg";
 import { Tabs, Tag } from "antd";
 
-export default function Cell({ projectId, id }) {
+export default function Cell({ id }) {
   const cell = cells.find((c) => c.id === id);
   return (
     <main className="px-10 py-5">
@@ -10,7 +10,11 @@ export default function Cell({ projectId, id }) {
         <h1 className="my-5 text-2xl">
           Viewing <span className="font-semibold ">{cell.name}</span>
         </h1>
-        <Tag className="self-center" color={cell.reviewed ? "blue" : "red"}>
+        <Tag
+          className={`self-center ${
+            cell.reviewd ? "bg-blue-400" : "bg-red-400"
+          }`}
+        >
           {cell.reviewed ? "reviewed" : "not reviewed"}
         </Tag>
       </div>

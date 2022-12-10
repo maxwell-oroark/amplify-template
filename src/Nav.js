@@ -4,7 +4,7 @@ import { UserOutlined } from "@ant-design/icons";
 
 export default function Nav({ user, signOut }) {
   const [location] = useLocation();
-  const [, , projectId, , cellId] = location.split("/");
+  const [, , projectId, , sampleId, , cellId] = location.split("/");
 
   return (
     <header className="sticky top-0 left-0 right-0 flex px-10 py-5 justify-between border border-b-1">
@@ -24,6 +24,23 @@ export default function Nav({ user, signOut }) {
             <Breadcrumb.Item>
               <Link className="text-xl" to={`/projects/${projectId}`}>
                 {projectId}
+              </Link>
+            </Breadcrumb.Item>
+          </>
+        )}
+        {sampleId && (
+          <>
+            <Breadcrumb.Item>
+              <Link className="text-xl" to={`/projects/${projectId}/samples`}>
+                samples
+              </Link>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>
+              <Link
+                className="text-xl"
+                to={`/projects/${projectId}/samples/${sampleId}`}
+              >
+                {sampleId}
               </Link>
             </Breadcrumb.Item>
           </>

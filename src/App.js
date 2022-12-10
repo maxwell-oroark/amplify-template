@@ -3,6 +3,7 @@ import { Route } from "wouter";
 import Nav from "./Nav";
 import Projects from "./Projects";
 import Project from "./Project";
+import Sample from "./Sample";
 import Cell from "./Cell";
 
 function App({ user, signOut }) {
@@ -18,8 +19,22 @@ function App({ user, signOut }) {
       <Route path="/projects/:projectId">
         {(params) => <Project id={params.projectId} />}
       </Route>
-      <Route path="/projects/:projectId/cells/:cellId">
-        {(params) => <Cell projectId={params.projectId} id={params.cellId} />}
+      <Route path="/projects/:projectId/samples">
+        {(params) => <Project id={params.projectId} />}
+      </Route>
+      <Route path="/projects/:projectId/samples/:sampleId">
+        {(params) => (
+          <Sample projectId={params.projectId} sampleId={params.sampleId} />
+        )}
+      </Route>
+      <Route path="/projects/:projectId/samples/:sampleId/cells/:cellId">
+        {(params) => (
+          <Cell
+            projectId={params.projectId}
+            sampleId={params.sampleId}
+            id={params.cellId}
+          />
+        )}
       </Route>
     </div>
   );
