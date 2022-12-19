@@ -4,16 +4,20 @@ import { fetchProject } from "./mocks/project";
 
 import { cells } from "./mocks/cells";
 import CellThumbnailSrc from "./mocks/cell_thumbnail.jpg";
-import HomologEntry from "./HomologEntry";
-import HomologOtherEntry from "./HomologOtherEntry";
 import SpreadEntry from "./SpreadEntry";
+import LociEntry from "./LociEntry";
+import Loading from "./Loading";
 
 export default function Cell({ id, projectId }) {
-  const { data: project } = useQuery(["project", projectId], () =>
-    fetchProject(projectId)
-  );
-  console.log(project);
+  const {
+    data: project,
+    isLoading,
+    error,
+  } = useQuery(["project", projectId], () => fetchProject(projectId));
   const cell = cells.find((c) => c.id === id);
+
+  if (isLoading || error) return <Loading />;
+
   return (
     <main className="px-10 py-5">
       <div className="flex space-x-2">
@@ -34,50 +38,10 @@ export default function Cell({ id, projectId }) {
             {cell.notes}
           </Tabs.TabPane>
           <Tabs.TabPane tab="Spread" key="spread">
-            <SpreadEntry />
+            <SpreadEntry inserts={project.inserts} />
           </Tabs.TabPane>
           <Tabs.TabPane tab="Loci" key="loci">
-            <Tabs>
-              <Tabs.TabPane tab="Loci A" key="loci-a">
-                <Tabs>
-                  <Tabs.TabPane tab="Homolog 1" key="homolog-1">
-                    <HomologEntry />
-                  </Tabs.TabPane>
-                  <Tabs.TabPane tab="Homolog 2" key="homolog-2">
-                    <HomologEntry />
-                  </Tabs.TabPane>
-                  <Tabs.TabPane tab="Other" key="homolog-3">
-                    <HomologOtherEntry />
-                  </Tabs.TabPane>
-                </Tabs>
-              </Tabs.TabPane>
-              <Tabs.TabPane tab="Loci B" key="loci-b">
-                <Tabs>
-                  <Tabs.TabPane tab="Homolog 1" key="homolog-1">
-                    <HomologEntry />
-                  </Tabs.TabPane>
-                  <Tabs.TabPane tab="Homolog 2" key="homolog-2">
-                    <HomologEntry />
-                  </Tabs.TabPane>
-                  <Tabs.TabPane tab="Other" key="homolog-3">
-                    <HomologOtherEntry />
-                  </Tabs.TabPane>
-                </Tabs>
-              </Tabs.TabPane>
-              <Tabs.TabPane tab="Loci C" key="loci-c">
-                <Tabs>
-                  <Tabs.TabPane tab="Homolog 1" key="homolog-1">
-                    <HomologEntry />
-                  </Tabs.TabPane>
-                  <Tabs.TabPane tab="Homolog 2" key="homolog-2">
-                    <HomologEntry />
-                  </Tabs.TabPane>
-                  <Tabs.TabPane tab="Other" key="homolog-3">
-                    <HomologOtherEntry />
-                  </Tabs.TabPane>
-                </Tabs>
-              </Tabs.TabPane>
-            </Tabs>
+            <LociEntry loci={project.loci} />
           </Tabs.TabPane>
         </Tabs>
         <div className="flex-grow">

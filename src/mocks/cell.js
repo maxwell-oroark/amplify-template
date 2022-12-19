@@ -4,7 +4,7 @@ export const cell = {
   image: "https://via.placeholder.com/350",
   notes: "these are some notes about the cell...",
   spread: {
-    ["Chromothripsis DAPI  only"]: null,
+    ["Chromothripsis DAPI only"]: null,
     ["Complex"]: null,
     ["NGTS Score Insert A"]: null,
     ["NGTS Score Insert B"]: null,

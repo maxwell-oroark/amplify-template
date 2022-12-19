@@ -13,13 +13,13 @@ const HomologOtherEntry = () => {
       form={form}
     >
       <Form.Item label="Gain">
-        <Input type="number" />
+        <Input type="checkbox" />
       </Form.Item>
       <Form.Item label="Loss/SCE">
-        <Input type="number" />
+        <Input type="checkbox" />
       </Form.Item>
       <Form.Item label="Chromothripsis">
-        <Input type="number" />
+        <Input type="checkbox" />
       </Form.Item>
       <Form.Item>
         <Button type="primary bg-blue-400">Submit</Button>

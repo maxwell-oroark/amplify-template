@@ -13,19 +13,19 @@ const HomologEntry = () => {
       form={form}
     >
       <Form.Item label="Translocation">
-        <Input type="number" />
+        <Input type="checkbox" />
       </Form.Item>
       <Form.Item label="Inversion/SCE">
-        <Input type="number" />
+        <Input type="checkbox" />
       </Form.Item>
       <Form.Item label="Truncated">
-        <Input type="number" />
+        <Input type="checkbox" />
       </Form.Item>
       <Form.Item label="Large Signal Split">
-        <Input type="number" />
+        <Input type="checkbox" />
       </Form.Item>
       <Form.Item label="Non-inverted Insert A">
-        <Input type="number" />
+        <Input type="checkbox" />
       </Form.Item>
       <Form.Item>
         <Button type="primary bg-blue-400">Submit</Button>

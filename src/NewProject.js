@@ -1,12 +1,19 @@
-import { Form, Input, Button } from "antd";
+import { Form, InputNumber, Button } from "antd";
 import { useQueryClient } from "react-query";
 
 export default function NewProject({ project }) {
   const [form] = Form.useForm();
   const queryClient = useQueryClient();
   const submitValues = (values) => {
-    const newProject = { ...project, ...values };
-    localStorage.setItem(project.id, JSON.stringify(newProject));
+    const { loci, inserts } = values;
+    localStorage.setItem(
+      project.id,
+      JSON.stringify({
+        ...project,
+        loci: parseInt(loci),
+        inserts: parseInt(inserts),
+      })
+    );
     queryClient.invalidateQueries();
   };
 
@@ -23,10 +30,10 @@ export default function NewProject({ project }) {
           onFinish={submitValues}
         >
           <Form.Item name="loci" label="Number of Loci">
-            <Input type="number" />
+            <InputNumber min={0} max={2} type="number" />
           </Form.Item>
           <Form.Item name="inserts" label="Number of Inserts">
-            <Input type="number" />
+            <InputNumber min={0} max={2} type="number" />
           </Form.Item>
           <Form.Item>
             <Button htmlType="submit" type="primary bg-blue-400">

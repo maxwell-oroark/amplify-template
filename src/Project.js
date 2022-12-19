@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { useQuery } from "react-query";
 import { fetchProject } from "./mocks/project";
 import NewProject from "./NewProject";
+import Loading from "./Loading";
 
 const samples = ["samples-123", "samples-345", "samples-456"];
 
@@ -13,12 +14,7 @@ export default function Project({ id }) {
     data: project,
   } = useQuery(["project", id], () => fetchProject(id));
 
-  if (isLoading || error)
-    return (
-      <main className="px-10 py-5">
-        <div>Loading...</div>
-      </main>
-    );
+  if (isLoading || error) return <Loading />;
 
   const { configured, ...rest } = project;
   console.log(project);

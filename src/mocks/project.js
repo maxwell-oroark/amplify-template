@@ -22,7 +22,7 @@ export const projects = {
         id: "sample-123",
       },
     ],
-    loci: 2,
+    loci: 3,
     inserts: 2,
     instructions: "some instructions",
   },
