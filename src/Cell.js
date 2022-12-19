@@ -18,6 +18,10 @@ export default function Cell({ id, projectId }) {
 
   if (isLoading || error) return <Loading />;
 
+  console.table([
+    ["inserts", project.inserts],
+    ["loci", project.loci],
+  ]);
   return (
     <main className="px-10 py-5">
       <div className="flex space-x-2">
