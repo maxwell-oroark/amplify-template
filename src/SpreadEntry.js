@@ -3,7 +3,7 @@ import { Button, Form, Input } from "antd";
 
 const SpreadEntry = ({ inserts }) => {
   const [form] = Form.useForm();
-  console.log(inserts);
+  console.log(`# of inserts: ${inserts}`);
   return (
     <Form
       labelCol={{ span: 16 }}

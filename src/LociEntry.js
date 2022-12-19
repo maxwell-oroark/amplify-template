@@ -3,6 +3,7 @@ import HomologEntry from "./HomologEntry";
 import HomologOtherEntry from "./HomologOtherEntry";
 
 export default function LociEntry({ loci }) {
+  console.log(`# of loci: ${loci}`);
   return (
     <Tabs>
       {Array(loci)

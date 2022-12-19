@@ -17,7 +17,6 @@ export default function Project({ id }) {
   if (isLoading || error) return <Loading />;
 
   const { configured, ...rest } = project;
-  console.log(project);
 
   if (!configured) {
     return <NewProject project={rest} />;

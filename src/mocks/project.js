@@ -30,7 +30,6 @@ export const projects = {
 
 export const fetchProject = (id) => {
   return new Promise((res) => {
-    console.log(localStorage.getItem(id));
     if (localStorage.getItem(id)) {
       return res(JSON.parse(localStorage.getItem(id)));
     } else {
