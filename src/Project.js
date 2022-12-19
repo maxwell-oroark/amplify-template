@@ -11,9 +11,6 @@ export default function Project({ id }) {
     fetchProject(id)
   );
 
-  console.log(error);
-  console.log(data);
-
   if (isLoading || error)
     return (
       <main className="px-10 py-5">

@@ -32,7 +32,8 @@ export const fetchProject = (id) => {
   return new Promise((res) => {
     return setTimeout(() => res(projects[id]), 1000);
   }).then((data) => {
-    data["configured"] = Object.keys(data).includes("loci");
+    const keys = Object.keys(data);
+    data["configured"] = keys.includes("loci") && keys.includes("inserts");
     return data;
   });
 };
