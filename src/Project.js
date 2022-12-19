@@ -7,9 +7,11 @@ import NewProject from "./NewProject";
 const samples = ["samples-123", "samples-345", "samples-456"];
 
 export default function Project({ id }) {
-  const { isLoading, error, data } = useQuery(["project", id], () =>
-    fetchProject(id)
-  );
+  const {
+    isLoading,
+    error,
+    data: project,
+  } = useQuery(["project", id], () => fetchProject(id));
 
   if (isLoading || error)
     return (
@@ -18,8 +20,11 @@ export default function Project({ id }) {
       </main>
     );
 
-  if (!data.configured) {
-    return <NewProject id={id} />;
+  const { configured, ...rest } = project;
+  console.log(project);
+
+  if (!configured) {
+    return <NewProject project={rest} />;
   }
 
   return (

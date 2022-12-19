@@ -1,11 +1,18 @@
+import { Tabs, Tag } from "antd";
+import { useQuery } from "react-query";
+import { fetchProject } from "./mocks/project";
+
 import { cells } from "./mocks/cells";
 import CellThumbnailSrc from "./mocks/cell_thumbnail.jpg";
-import { Tabs, Tag } from "antd";
 import HomologEntry from "./HomologEntry";
 import HomologOtherEntry from "./HomologOtherEntry";
 import SpreadEntry from "./SpreadEntry";
 
-export default function Cell({ id }) {
+export default function Cell({ id, projectId }) {
+  const { data: project } = useQuery(["project", projectId], () =>
+    fetchProject(projectId)
+  );
+  console.log(project);
   const cell = cells.find((c) => c.id === id);
   return (
     <main className="px-10 py-5">

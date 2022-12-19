@@ -1,6 +1,6 @@
-import { cells } from "./mocks/cells";
-import { Link } from "wouter";
 import { Table, Tag } from "antd";
+import { Link } from "wouter";
+import { cells } from "./mocks/cells";
 
 export default function Sample({ projectId, sampleId }) {
   return (

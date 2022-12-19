@@ -1,9 +1,13 @@
 import { Form, Input, Button } from "antd";
+import { useQueryClient } from "react-query";
 
-export default function NewProject({ id }) {
+export default function NewProject({ project }) {
   const [form] = Form.useForm();
+  const queryClient = useQueryClient();
   const submitValues = (values) => {
-    console.log(values);
+    const newProject = { ...project, ...values };
+    localStorage.setItem(project.id, JSON.stringify(newProject));
+    queryClient.invalidateQueries();
   };
 
   return (
