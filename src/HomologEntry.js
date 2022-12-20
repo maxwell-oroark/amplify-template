@@ -24,6 +24,9 @@ const HomologEntry = () => {
       <Form.Item label="Large Signal Split">
         <Input type="checkbox" />
       </Form.Item>
+      <Form.Item label="Inverted Insert A">
+        <Input type="checkbox" />
+      </Form.Item>
       <Form.Item label="Non-inverted Insert A">
         <Input type="checkbox" />
       </Form.Item>
