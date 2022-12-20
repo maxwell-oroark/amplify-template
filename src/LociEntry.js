@@ -2,7 +2,7 @@ import { Tabs } from "antd";
 import HomologEntry from "./HomologEntry";
 import HomologOtherEntry from "./HomologOtherEntry";
 
-export default function LociEntry({ loci }) {
+export default function LociEntry({ loci, inserts }) {
   return (
     <Tabs>
       {Array(loci)
@@ -16,10 +16,10 @@ export default function LociEntry({ loci }) {
             >
               <Tabs>
                 <Tabs.TabPane tab="Homolog 1" key="homolog-1">
-                  <HomologEntry />
+                  <HomologEntry inserts={inserts} />
                 </Tabs.TabPane>
                 <Tabs.TabPane tab="Homolog 2" key="homolog-2">
-                  <HomologEntry />
+                  <HomologEntry inserts={inserts} />
                 </Tabs.TabPane>
                 <Tabs.TabPane tab="Other" key="homolog-3">
                   <HomologOtherEntry />

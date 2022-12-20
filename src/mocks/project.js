@@ -30,11 +30,13 @@ export const projects = {
 
 export const fetchProject = (id) => {
   return new Promise((res) => {
-    if (localStorage.getItem(id)) {
-      return res(JSON.parse(localStorage.getItem(id)));
-    } else {
-      return res(projects[id]);
-    }
+    return setTimeout(() => {
+      if (localStorage.getItem(id)) {
+        return res(JSON.parse(localStorage.getItem(id)));
+      } else {
+        return res(projects[id]);
+      }
+    }, 1000);
   }).then((data) => {
     const keys = Object.keys(data);
     data["configured"] = keys.includes("loci") && keys.includes("inserts");

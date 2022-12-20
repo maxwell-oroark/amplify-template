@@ -37,7 +37,7 @@ export default function Cell({ id, projectId }) {
         </Tag>
       </div>
       <div className="flex">
-        <Tabs>
+        <Tabs className="w-72">
           <Tabs.TabPane tab="Summary" key="summary">
             {cell.notes}
           </Tabs.TabPane>
@@ -45,7 +45,7 @@ export default function Cell({ id, projectId }) {
             <SpreadEntry inserts={project.inserts} />
           </Tabs.TabPane>
           <Tabs.TabPane tab="Loci" key="loci">
-            <LociEntry loci={project.loci} />
+            <LociEntry loci={project.loci} inserts={project.inserts} />
           </Tabs.TabPane>
         </Tabs>
         <div className="flex-grow">

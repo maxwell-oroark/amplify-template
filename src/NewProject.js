@@ -30,10 +30,10 @@ export default function NewProject({ project }) {
           onFinish={submitValues}
         >
           <Form.Item name="loci" label="Number of Loci">
-            <InputNumber min={0} max={2} type="number" />
+            <InputNumber min={1} max={3} type="number" />
           </Form.Item>
           <Form.Item name="inserts" label="Number of Inserts">
-            <InputNumber min={0} max={2} type="number" />
+            <InputNumber min={1} max={2} type="number" />
           </Form.Item>
           <Form.Item>
             <Button htmlType="submit" type="primary bg-blue-400">

@@ -6,8 +6,8 @@ const HomologOtherEntry = () => {
 
   return (
     <Form
-      labelCol={{ span: 16 }}
-      wrapperCol={{ span: 8 }}
+      labelCol={{ span: 20 }}
+      wrapperCol={{ span: 4 }}
       labelAlign="left"
       layout="horizontal"
       form={form}
